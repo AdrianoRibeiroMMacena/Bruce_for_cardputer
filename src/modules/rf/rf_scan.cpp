@@ -1,4 +1,5 @@
 #include "rf_scan.h"
+#include "custom/rf_logger/rf_logger.h"
 #include "core/led_control.h"
 #include "core/sd_functions.h"
 #include "core/type_convertion.h"
@@ -734,6 +735,7 @@ bool rfSaveSignal(float frequency, RfCodes codes, bool raw, char *key, bool auto
     if (file) {
         file.println(subfile_out);
         if (!autoSave) displaySuccess(file.path());
+        logCapturedSignal(frequency, codes, raw);
     } else {
         displayError("Error saving file", true);
     }
