@@ -10,6 +10,7 @@
 #include "core/wifi/wifi_common.h" // using common wifisetup
 #include "esp_task_wdt.h"
 #include "webFiles.h"
+#include "custom/dashboard/dashboard.h"
 #include <MD5Builder.h>
 #include <cstddef>
 #include <esp32-hal-psram.h>
@@ -737,6 +738,7 @@ void configureWebServer() {
             }
         }
     });
+    registerCustomRoutes(server);
     server->begin();
     Serial.println("Webserver started");
 }
