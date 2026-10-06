@@ -27,6 +27,8 @@ MainMenu::MainMenu() {
 #endif
         &clockMenu,
         &othersMenu,
+        &statusPanelMenu,
+        
         &configMenu,
     };
 
