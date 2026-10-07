@@ -19,6 +19,7 @@
 #include "menu_items/RFMenu.h"
 #include "menu_items/ScriptsMenu.h"
 #include "menu_items/StatusPanelMenu.h"
+#include "../custom/ble_proximity/ble_proximity.h"
 #include "menu_items/WifiMenu.h"
 class MainMenu {
 public:
@@ -36,6 +37,7 @@ public:
     RFMenu rfMenu;
     ScriptsMenu scriptsMenu;
     StatusPanelMenu statusPanelMenu;
+    BleProximityMenu bleProximityMenu;
     WifiMenu wifiMenu;
 #if !defined(LITE_VERSION)
     LoRaMenu loraMenu;

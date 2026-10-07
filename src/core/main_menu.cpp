@@ -28,6 +28,7 @@ MainMenu::MainMenu() {
         &clockMenu,
         &othersMenu,
         &statusPanelMenu,
+        &bleProximityMenu,
         
         &configMenu,
     };

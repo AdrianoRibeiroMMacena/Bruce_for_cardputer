@@ -1,4 +1,5 @@
 #include "ble_common.h"
+#include "custom/ble_classifier/ble_classifier.h"
 #include "core/mykeyboard.h"
 #include "core/radio_mem.h"
 #include "core/ram_profile.h"
@@ -215,6 +216,7 @@ void ble_scan() {
             if (bt_name.isEmpty()) bt_name = "<no name>";
             else bt_title = bt_name;
             if (bt_title.isEmpty()) bt_title = bt_address;
+            bt_title += " [" + classifyVendor(bt_address) + "]";
 
             if (options.size() < MAX_DISPLAY_DEVICES) {
                 options.emplace_back(bt_title.c_str(), [=]() { ble_info(bt_name, bt_address, bt_signal); });
