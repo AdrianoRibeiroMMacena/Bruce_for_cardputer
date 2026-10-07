@@ -20,6 +20,7 @@
 #include "menu_items/ScriptsMenu.h"
 #include "menu_items/StatusPanelMenu.h"
 #include "../custom/ble_proximity/ble_proximity.h"
+#include "../custom/vault/vault.h"
 #include "menu_items/WifiMenu.h"
 class MainMenu {
 public:
@@ -38,6 +39,7 @@ public:
     ScriptsMenu scriptsMenu;
     StatusPanelMenu statusPanelMenu;
     BleProximityMenu bleProximityMenu;
+    VaultMenu vaultMenu;
     WifiMenu wifiMenu;
 #if !defined(LITE_VERSION)
     LoRaMenu loraMenu;

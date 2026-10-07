@@ -29,6 +29,7 @@ MainMenu::MainMenu() {
         &othersMenu,
         &statusPanelMenu,
         &bleProximityMenu,
+        &vaultMenu,
         
         &configMenu,
     };
