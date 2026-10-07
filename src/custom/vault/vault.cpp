@@ -116,6 +116,7 @@ void VaultMenu::drawIcon(float scale) {
 void VaultMenu::optionsMenu() {
     String pin = keyboard("", 20, "Enter vault PIN:", true);
     if (pin == "") return;
+    returnToMenu = false;
 
     String json;
     bool loaded = loadVault(pin, json);
@@ -128,7 +129,7 @@ void VaultMenu::optionsMenu() {
     }
     JsonArray arr = doc.as<JsonArray>();
 
-    while (!check(EscPress)) {
+    while (!returnToMenu) {
         options.clear();
         for (JsonObject entry : arr) {
             String label = entry["label"].as<String>();
@@ -138,6 +139,7 @@ void VaultMenu::optionsMenu() {
 
         addOptionToMainMenu();
         int selected = loopOptions(options);
+        if (returnToMenu) break;
 
         if (selected == (int)arr.size()) {
             // Add new entry

@@ -48,6 +48,7 @@ void BleProximityMenu::optionsMenu() {
 
     addOptionToMainMenu();
     int selected = loopOptions(options);
+    if (returnToMenu) return;
     if (selected < 0 || selected >= (int)macList.size()) return;
 
     String targetMac = macList[selected];
