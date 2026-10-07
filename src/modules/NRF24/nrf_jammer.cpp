@@ -2,6 +2,7 @@
 #include "core/display.h"
 #include "core/mykeyboard.h"
 #include "nrf_common.h"
+#include "custom/nrf_logger/nrf_logger.h"
 #include <globals.h>
 
 static void shuffleChannels(uint8_t *arr, size_t count) {
@@ -86,6 +87,7 @@ void nrf_jammer() {
     };
 
     if (nrf_start(mode)) {
+        logNrfEvent("Jammer started");
 
         int modeIndex = 0;
         int hopIndex = 0;

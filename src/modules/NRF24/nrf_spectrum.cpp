@@ -1,6 +1,7 @@
 #include "nrf_spectrum.h"
 #include "core/display.h"
 #include "core/mykeyboard.h"
+#include "custom/nrf_logger/nrf_logger.h"
 
 #define CHANNELS 80
 #define RGB565(r, g, b) ((((r >> 3) << 11) | ((g >> 2) << 5) | (b >> 3)))
@@ -75,6 +76,7 @@ void nrf_spectrum() {
         };
         for (uint8_t i = 0; i < 6; ++i) { NRFradio.openReadingPipe(i, noiseAddress[i]); }
         NRFradio.setDataRate(RF24_1MBPS);
+        logNrfEvent("Spectrum scan started");
 
         while (!check(EscPress)) {
             scanChannels();

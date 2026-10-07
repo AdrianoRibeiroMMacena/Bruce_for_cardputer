@@ -16,6 +16,7 @@
 #include "core/sd_functions.h"
 #include <SD.h>
 #include <globals.h>
+#include "custom/nrf_logger/nrf_logger.h"
 
 // ── Tuning Constants ────────────────────────────────────────────
 static constexpr int SCAN_TRIES_PER_CH = 6;
@@ -643,6 +644,7 @@ static bool mj_scan() {
 
     if (!mj_validateNrfMode()) return false;
 
+    logNrfEvent("MouseJack started");
     if (!nrf_start(mj_nrfMode)) {
         displayError("NRF24 not found", true);
         return false;
@@ -767,6 +769,7 @@ static void mj_attackString(int targetIndex) {
 
     if (!mj_validateNrfMode()) return;
 
+    logNrfEvent("MouseJack started");
     if (!nrf_start(mj_nrfMode)) {
         displayError("NRF24 not found", true);
         return;
@@ -830,6 +833,7 @@ static void mj_attackDucky(int targetIndex) {
         return;
     }
 
+    logNrfEvent("MouseJack started");
     if (!nrf_start(mj_nrfMode)) {
         file.close();
         displayError("NRF24 not found", true);
