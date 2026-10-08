@@ -22,6 +22,7 @@
 #include "../custom/ble_proximity/ble_proximity.h"
 #include "../custom/vault/vault.h"
 #include "../custom/audio_trigger/audio_trigger.h"
+#include "../custom/ir_smart/ir_smart.h"
 #include "menu_items/WifiMenu.h"
 class MainMenu {
 public:
@@ -42,6 +43,7 @@ public:
     BleProximityMenu bleProximityMenu;
     VaultMenu vaultMenu;
     AudioTriggerMenu audioTriggerMenu;
+    IrSmartMenu irSmartMenu;
     WifiMenu wifiMenu;
 #if !defined(LITE_VERSION)
     LoRaMenu loraMenu;

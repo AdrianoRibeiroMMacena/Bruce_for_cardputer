@@ -31,6 +31,7 @@ MainMenu::MainMenu() {
         &bleProximityMenu,
         &vaultMenu,
         &audioTriggerMenu,
+        &irSmartMenu,
         
         &configMenu,
     };
