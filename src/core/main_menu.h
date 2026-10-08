@@ -23,6 +23,7 @@
 #include "../custom/vault/vault.h"
 #include "../custom/audio_trigger/audio_trigger.h"
 #include "../custom/ir_smart/ir_smart.h"
+#include "../custom/phone_gps/phone_gps.h"
 #include "menu_items/WifiMenu.h"
 class MainMenu {
 public:
@@ -44,6 +45,7 @@ public:
     VaultMenu vaultMenu;
     AudioTriggerMenu audioTriggerMenu;
     IrSmartMenu irSmartMenu;
+    PhoneGpsMenu phoneGpsMenu;
     WifiMenu wifiMenu;
 #if !defined(LITE_VERSION)
     LoRaMenu loraMenu;

@@ -32,6 +32,7 @@ MainMenu::MainMenu() {
         &vaultMenu,
         &audioTriggerMenu,
         &irSmartMenu,
+        &phoneGpsMenu,
         
         &configMenu,
     };
