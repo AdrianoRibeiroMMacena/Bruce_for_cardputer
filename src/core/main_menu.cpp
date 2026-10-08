@@ -30,6 +30,7 @@ MainMenu::MainMenu() {
         &statusPanelMenu,
         &bleProximityMenu,
         &vaultMenu,
+        &audioTriggerMenu,
         
         &configMenu,
     };

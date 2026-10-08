@@ -21,6 +21,7 @@
 #include "menu_items/StatusPanelMenu.h"
 #include "../custom/ble_proximity/ble_proximity.h"
 #include "../custom/vault/vault.h"
+#include "../custom/audio_trigger/audio_trigger.h"
 #include "menu_items/WifiMenu.h"
 class MainMenu {
 public:
@@ -40,6 +41,7 @@ public:
     StatusPanelMenu statusPanelMenu;
     BleProximityMenu bleProximityMenu;
     VaultMenu vaultMenu;
+    AudioTriggerMenu audioTriggerMenu;
     WifiMenu wifiMenu;
 #if !defined(LITE_VERSION)
     LoRaMenu loraMenu;
