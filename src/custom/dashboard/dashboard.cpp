@@ -51,4 +51,19 @@ void registerCustomRoutes(AsyncWebServer *srv) {
     srv->on("/dashboard", HTTP_GET, [](AsyncWebServerRequest *request) {
         serveWebUIFile(request, "dashboard.html", "text/html", true, dashboard_html, dashboard_html_size);
     });
+
+    srv->on("/nfcrelay", HTTP_GET, [](AsyncWebServerRequest *request) {
+        String label = "unknown";
+        if (request->hasParam("label")) label = request->getParam("label")->value();
+
+        FS *fs;
+        if (getFsStorage(fs)) {
+            File f = fs->open("/BruceRF/nfc_relay_log.csv", FILE_APPEND);
+            if (f) {
+                f.println(String(timeStr) + "," + label);
+                f.close();
+            }
+        }
+        request->send(200, "text/plain", "OK: " + label);
+    });
 }
